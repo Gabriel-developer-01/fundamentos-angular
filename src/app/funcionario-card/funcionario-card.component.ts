@@ -14,5 +14,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class FuncionarioCardComponent{
 
  @Input() funcionario: any;
+
+ getEstilosCartao(){
+   return {
+      'border-width': this.funcionario.id + 'px',
+      backgroundColor: this.funcionario.id % 2 == 0 ? 'lightblue' : 'lightgreen'
+
+   };
+ }
   
 }
