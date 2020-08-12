@@ -9,9 +9,14 @@ export class AppComponent {
   nome = 'Gabriel';
 
 
-  adicionar(nome: string){
-   this.nome = nome
-    
+  adicionar(){
+
+   const numero = Math.round(Math.random() * 100);
+   this.nome = 'Joao' + numero;
+  }
+
+  alterarNome(nome: any) {
+    this.nome = nome.target.value;
   }
 
 }
