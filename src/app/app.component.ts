@@ -11,6 +11,7 @@ export class AppComponent implements OnInit{
   funcionarios = [];
 
   constructor(private funcionarioService : FuncionarioService) { }
+
   ngOnInit(): void {
     this.funcionarios = this.funcionarioService.consultar();
   }

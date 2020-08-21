@@ -7,11 +7,8 @@ import { AppComponent } from './app.component';
 import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.component';
 import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
 import { CampoColoridoDirective } from './campo-colorido.directive';
-import { FuncionarioService, FuncionarioAbreviadoService } from './funcionario.service';
-
-const criarFuncionarioService = () => {
-  return new FuncionarioAbreviadoService(2);
-}
+import { FuncionarioService } from './funcionario.service';
+import { LogService } from './log.service';
 
 
 @NgModule({
@@ -27,7 +24,9 @@ const criarFuncionarioService = () => {
     FormsModule
   ],
   providers: [
-    { provide: FuncionarioService, useFactory: criarFuncionarioService }
+    FuncionarioService,
+    LogService,
+    { provide: 'LogPrefixo', useValue: 'LOG' }
   ],
   bootstrap: [AppComponent]
 })
